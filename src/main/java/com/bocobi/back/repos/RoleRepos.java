@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.bocobi.back.models.Role;
 
 
-public interface RoleRepos extends JpaRepository<Role, Integer> {
+public interface RoleRepos extends JpaRepository<Role, Long> {
 
-	Role findByName(String rolename);
+	//Role findByName(String rolename);
 
 }

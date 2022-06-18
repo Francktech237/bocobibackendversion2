@@ -2,28 +2,30 @@ package com.bocobi.back.models;
 
 import javax.persistence.*;
 
+@Table
+@Entity
 public class ModePaiement {
     
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+    private Long idPaiement;
 
-	private String libelle;
+	private String libellePaiement;
 
-	public int getId() {
-		return id;
+	public Long getIdPaiement() {
+		return idPaiement;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdPaiement(Long idPaiement) {
+		this.idPaiement = idPaiement;
 	}
 
-	public String getLibelle() {
-		return libelle;
+	public String getLibellePaiement() {
+		return libellePaiement;
 	}
 
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+	public void setLibellePaiement(String libellePaiement) {
+		this.libellePaiement = libellePaiement;
 	}
 
 }

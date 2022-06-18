@@ -1,5 +1,6 @@
 package com.bocobi.back.models;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -23,11 +24,18 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long idUser;
 	private String name;
 	private String username;
+	private String sexe;
+	private String email;
+	private String Status;
+	private String numTel;
+	private Date dateNaiss;
+	private String lieuResi;
+	private String photo;
 	private String password;
-	private String email;	
+		
 	
 	@ManyToOne
 	public Abonnement abonnement;
@@ -36,13 +44,16 @@ public class User {
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Role> roles;
 
-	public int getId() {
-		return id;
+	
+	public Long getIdUser() {
+		return idUser;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
 	}
+
+	
 
 	public String getName() {
 		return name;
@@ -60,12 +71,12 @@ public class User {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getSexe() {
+		return sexe;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
 	}
 
 	public String getEmail() {
@@ -74,6 +85,54 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getStatus() {
+		return Status;
+	}
+
+	public void setStatus(String status) {
+		Status = status;
+	}
+
+	public String getNumTel() {
+		return numTel;
+	}
+
+	public void setNumTel(String numTel) {
+		this.numTel = numTel;
+	}
+
+	public Date getDateNaiss() {
+		return dateNaiss;
+	}
+
+	public void setDateNaiss(Date dateNaiss) {
+		this.dateNaiss = dateNaiss;
+	}
+
+	public String getLieuResi() {
+		return lieuResi;
+	}
+
+	public void setLieuResi(String lieuResi) {
+		this.lieuResi = lieuResi;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public List<Role> getRoles() {

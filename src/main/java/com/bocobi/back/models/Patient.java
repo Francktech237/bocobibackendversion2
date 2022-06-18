@@ -1,50 +1,62 @@
 package com.bocobi.back.models;
 
+import java.sql.Date;
+
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table
-public class Patient extends User {
+@PrimaryKeyJoinColumn(name = "idPersonne")
+public class Patient extends Personne {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private String prenom;
-	private String sexe;
+	//private Long idPatient;
+	private Date dateNaissance;
+	private String lieuResidence;
+	private int age;
+	private String statutMatrimonial;
 	
-
-	@ManyToOne
-	public Abonnement abonnement;
 	
-	public String getPrenom() {
-		return prenom;
+	/*public Long getIdPatient() {
+		return idPatient;
 	}
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setIdPatient(Long idPatient) {
+		this.idPatient = idPatient;
+	}*/
+	public Date getDateNaissance() {
+		return dateNaissance;
 	}
-	public String getSexe() {
-		return sexe;
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
 	}
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
+	public String getLieuResidence() {
+		return lieuResidence;
 	}
-
-	public int getId() {
-		return id;
+	public void setLieuResidence(String lieuResidence) {
+		this.lieuResidence = lieuResidence;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public int getAge() {
+		return age;
 	}
-	public Abonnement getAbonnement() {
-		return abonnement;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	public void setAbonnement(Abonnement abonnement) {
-		this.abonnement = abonnement;
+	public String getStatutMatrimonial() {
+		return statutMatrimonial;
 	}
-
+	public void setStatutMatrimonial(String statutMatrimonial) {
+		this.statutMatrimonial = statutMatrimonial;
+	}
+	
+	
 }

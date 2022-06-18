@@ -18,20 +18,20 @@ public class Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private String name;
-
-	public int getId() {
-		return id;
+	private Long idRole;
+	
+	private String nameRole;
+	
+	public Long getIdRole() {
+		return idRole;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdRole(Long idRole) {
+		this.idRole = idRole;
 	}
-	public String getName() {
-		return name;
+	public String getNameRole() {
+		return nameRole;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNameRole(String nameRole) {
+		this.nameRole = nameRole;
 	}
-
 }

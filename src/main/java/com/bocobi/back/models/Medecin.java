@@ -1,44 +1,46 @@
-package com.bocobi.back.models;
+/*package com.bocobi.back.models;
 
 import javax.persistence.*;
 
-public class Medecin {
+@Table
+@Entity
+@DiscriminatorValue("M")
+public class Medecin extends Employe {
     
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long idMedecin;
 
-	private String grade;
+	private String serviceMedecin;
 
-	private String specialite;
+	private String specialiteMedecin;
 
-	public int getId() {
-		return id;
+	public long getIdMedecin() {
+		return idMedecin;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdMedecin(long idMedecin) {
+		this.idMedecin = idMedecin;
 	}
 
-	public String getGrade() {
-		return grade;
+	public String getServiceMedecin() {
+		return serviceMedecin;
 	}
 
-	public void setGrade(String grade) {
-		this.grade = grade;
+	public void setServiceMedecin(String serviceMedecin) {
+		this.serviceMedecin = serviceMedecin;
 	}
 
-	public String getSpecialite() {
-		return specialite;
+	public String getSpecialiteMedecin() {
+		return specialiteMedecin;
 	}
 
-	public void setSpecialite(String specialite) {
-		this.specialite = specialite;
+	public void setSpecialiteMedecin(String specialiteMedecin) {
+		this.specialiteMedecin = specialiteMedecin;
 	}
-	
+
 	//@OneToMany(mappedBy ="medecin")
 	//@JoinColumn(name = "idMedecin")
 	//private ArrayList<Teleconsultation> teleconsultations;
 
-
-}
+}*/

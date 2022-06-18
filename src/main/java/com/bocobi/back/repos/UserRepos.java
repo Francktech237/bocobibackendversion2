@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.bocobi.back.models.User;
 
 
-public interface UserRepos extends JpaRepository<User, Integer> {
+public interface UserRepos extends JpaRepository<User, Long> {
 
-	User findByusername(String username);
+	//User findByusername(String username);
 
 }

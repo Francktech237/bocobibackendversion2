@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bocobi.back.models.Patient;
 import com.bocobi.back.models.User;
+import com.bocobi.back.repos.PatientRepos;
 import com.bocobi.back.repos.UserRepos;
 
 
@@ -20,27 +22,27 @@ import com.bocobi.back.repos.UserRepos;
 @CrossOrigin
 public class PatientController {
 	
-	@Autowired
-	private UserRepos patientRepos;
+	/*@Autowired
+	private PatientRepos patientRepos;
 	
-	@GetMapping("bocobi/patients")
-	public List<User> getPatients() {
+	@GetMapping("/patients")
+	public List<Patient> getPatients() {
 		return patientRepos.findAll();
 	}
 	
-	@GetMapping("bocobi/patient/{id}")
-	public User searchById(@PathVariable int id) {
-		return patientRepos.findById(id).orElse(null);
+	@GetMapping("/patient/{idPatient}")
+	public User searchById(@PathVariable long idPatient) {
+		return patientRepos.findById(idPatient).orElse(null);
 	}	
 	
-	@PostMapping("bocobi/patient")
-	public User savePatient(@RequestBody User patient) {
+	@PostMapping("/patient")
+	public Patient savePatient(@RequestBody Patient patient) {
 		return patientRepos.save(patient);
 	}
 
-	@DeleteMapping("bocobi/patient/{id}")
-	public String deletePatient(@PathVariable int id) {
-		patientRepos.deleteById(id);
-		return "Patient suprimer avec success !!"+id;
-	}	
+	@DeleteMapping("/patient/{idPatient}")
+	public String deletePatient(@PathVariable long idPatient) {
+		patientRepos.deleteById(idPatient);
+		return "Patient suprimer avec success !!"+idPatient;
+	}*/
 }

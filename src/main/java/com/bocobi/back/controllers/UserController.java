@@ -15,46 +15,49 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.bocobi.back.models.Role;
 import com.bocobi.back.models.User;
-import com.bocobi.back.services.UserServiceImple;
-
+import com.bocobi.back.repos.RoleRepos;
+import com.bocobi.back.repos.UserRepos;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/bocobi")
 @RequiredArgsConstructor
 @CrossOrigin
 public class UserController {
 
-	@Autowired
-	private UserServiceImple userservice; 
+	/*@Autowired
+	private UserRepos userservice;
+	private RoleRepos roleservice; 
 
 	@GetMapping("/users")
 	public ResponseEntity<List<User>>getUsers(){
-		return ResponseEntity.ok().body(userservice.getUsers());
+		return ResponseEntity.ok().body(userservice.findAll());
 	}
 
 
 	@PostMapping("/users")
 	public ResponseEntity<User> saveUsers(@RequestBody User user){
-		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users").toString());
-		return ResponseEntity.created(uri).body(userservice.saveUser(user));
+		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/bocobi/users").toString());
+		return ResponseEntity.created(uri).body(userservice.save(user));
 	}
 	
 	@PostMapping("/init")
 	public ResponseEntity<User> initUsers(@RequestBody User user){
 		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users").toString());
-		return ResponseEntity.created(uri).body(userservice.saveUser(user));
+		return ResponseEntity.created(uri).body(userservice.save(user));
 	}
 
 	@PostMapping("/roles")
 	public ResponseEntity<Role> saverole(@RequestBody Role role){
 		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/roles").toString());
-		return ResponseEntity.created(uri).body(userservice.saveRole(role));
+		return ResponseEntity.created(uri).body(roleservice.save(role));
 	}
 
 	@PostMapping("/roles/addtouser")
 	public ResponseEntity<?> saveUsers(@RequestBody RoleToUserForm form){
-		userservice.addRoleToUser(form.getUsername(), form.getRoleName());
+		User user = userservice.findByusername(form.getUsername());
+		Role role = roleservice.findByName(form.getRoleName());
+		user.getRoles().add(role);
 		return ResponseEntity.ok().build();
 	}
 		
@@ -75,5 +78,5 @@ class RoleToUserForm{
 	}
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
-	}
+	}*/
 }
